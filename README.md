@@ -19,24 +19,3 @@ This repository contains the **React source code** for my personal portfolio web
 The deployed version is hosted in a separate repository: [Myportfolio](https://nethraharini.github.io/Myportfolio/)
 
 ---
-Portfolio-DeployedCode/
-├── public/
-│   ├── index.html
-│   ├── woman-walking.gif
-│   ├── aboutme.jpg
-│   ├── contact.gif
-│   ├── nethraimage.jpeg
-│   └── resume.pdf
-├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Home.jsx
-│   │   ├── About.jsx
-│   │   ├── Contact.jsx
-│   │   └── (other components)
-│   ├── App.js
-│   └── index.js
-├── .gitignore
-├── package.json
-├── README.md
-
