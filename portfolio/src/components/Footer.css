@@ -1,0 +1,135 @@
+/* ===== Professional Footer Styles ===== */
+.footer {
+  background-color: rgba(248, 248, 248, 0.98);
+  padding: 2rem 0;
+  text-align: center;
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(224, 224, 224, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Decorative element */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, #1a73e8, #34a853);
+  opacity: 0.3;
+}
+
+/* Footer content container */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Footer text */
+.footer-text {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  transition: transform 0.3s ease;
+}
+
+.footer:hover .footer-text {
+  transform: translateY(-2px);
+}
+
+/* Social links */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.footer-social a {
+  color: #666;
+  font-size: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.footer-social a:hover {
+  color: #1a73e8;
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* Copyright text */
+.footer-copyright {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+.footer-copyright::before {
+  content: '';
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 1px;
+  background: rgba(136, 136, 136, 0.3);
+}
+
+/* Back to top button */
+.back-to-top {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(26, 115, 232, 0.1);
+  color: #1a73e8;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(26, 115, 232, 0.2);
+}
+
+.back-to-top:hover {
+  background: rgba(26, 115, 232, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 0;
+  }
+  
+  .footer-social {
+    gap: 1rem;
+  }
+  
+  .footer-social a {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.25rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .footer-social {
+    gap: 0.75rem;
+  }
+  
+  .back-to-top {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}

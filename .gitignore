@@ -1,0 +1,23 @@
+# === In Myportfolio/.gitignore ===
+
+# dependencies
+portfolio/node_modules/
+portfolio/.pnp
+portfolio/.pnp.js
+
+# testing
+portfolio/coverage/
+
+# production
+portfolio/build/
+
+# misc
+portfolio/.DS_Store
+portfolio/.env.local
+portfolio/.env.development.local
+portfolio/.env.test.local
+portfolio/.env.production.local
+
+portfolio/npm-debug.log*
+portfolio/yarn-debug.log*
+portfolio/yarn-error.log*

@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
+  color: #333;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+/* index.css */
+html {
+  scroll-behavior: smooth;
+}
+

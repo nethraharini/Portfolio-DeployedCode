@@ -1,0 +1,129 @@
+:root {
+  --mit-red: #A31F34;       /* MIT's iconic red */
+  --steel-gray: #6C757D;    /* Professional gray */
+  --elegant-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  --transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.skills-section {
+  background-color: #ffffff;
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, var(--mit-red), #F5F5F5);
+  opacity: 0.9;
+}
+
+.skill-card {
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: var(--elegant-shadow);
+  transition: var(--transition-smooth);
+  padding: 1.8rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.skill-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(245,245,245,0.8));
+  z-index: -1;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.skill-card:hover::after {
+  opacity: 1;
+}
+
+.skill-card h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: var(--mit-red);
+  margin-bottom: 1.2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.skill-card h3::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--mit-red);
+  transition: var(--transition-smooth);
+}
+
+.skill-card:hover h3::after {
+  width: 60px;
+}
+
+.skill-item {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  color: #444;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.skill-item::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--mit-red);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.section-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--mit-red), rgba(163, 31, 52, 0.1));
+}

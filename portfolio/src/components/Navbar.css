@@ -1,0 +1,192 @@
+/* Navbar Base Styles */
+.custom-navbar {
+  padding: 16px 0;
+  background-color: rgba(176, 209, 242, 0.9);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Transparent State */
+.custom-navbar.top {
+  background-color: rgba(176, 209, 242, 0.6);
+  box-shadow: none;
+  border-bottom-color: transparent;
+}
+
+/* Scrolled State */
+.custom-navbar.scrolled {
+  background-color: rgba(171, 209, 247, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  padding: 8px 0;
+}
+
+/* Branding */
+.nav-left {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-left:hover {
+  transform: translateX(4px);
+  text-decoration: none;
+}
+
+.avatar {
+  width: 40px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nav-left:hover .avatar {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #1a73e8, #34a853);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-left:hover .brand {
+  letter-spacing: 0px;
+}
+
+/* ===== Navbar Resume Button ===== */
+.navbar .resume-button {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: linear-gradient(135deg, #1a73e8 0%, #0c57c5 100%);
+  color: white !important; /* Ensures text stays white */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
+  text-decoration: none !important;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.navbar .resume-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(26, 115, 232, 0.3);
+  background: linear-gradient(135deg, #0c57c5 0%, #1a73e8 100%);
+  color: white !important; /* Explicitly set white color on hover */
+}
+
+/* Mobile view adjustments */
+@media (max-width: 992px) {
+  .navbar .resume-button {
+    margin: 0.75rem 0 0;
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem;
+    color: white !important; /* Ensures mobile view keeps white text */
+  }
+}
+
+
+/* Navigation Links */
+.navbar-nav .nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  padding: 8px 16px !important;
+  margin: 0 4px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #1a73e8, #34a853);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #1a73e8 !important;
+}
+
+.navbar-nav .nav-link:hover::before {
+  width: calc(100% - 32px);
+}
+
+.navbar-nav .nav-link.active {
+  color: #1a73e8 !important;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link.active::before {
+  width: calc(100% - 32px);
+}
+
+/* Mobile Menu */
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: rgba(171, 209, 247, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 10px 0 !important;
+    margin: 5px 0;
+  }
+  
+  .navbar-nav .nav-link::before {
+    left: 0;
+    bottom: 5px;
+  }
+  
+  .navbar-nav .nav-link:hover::before,
+  .navbar-nav .nav-link.active::before {
+    width: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .brand {
+    font-size: 1.2rem;
+  }
+  
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+}

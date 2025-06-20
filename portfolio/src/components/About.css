@@ -1,0 +1,291 @@
+/* About.css - Complete Styling with Image Enhancements */
+
+/* ===== Base Container ===== */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 40px;
+  gap: 80px;
+  flex-wrap: wrap;
+  background: linear-gradient(145deg, #ffffff 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* ===== Decorative Background Elements ===== */
+.about-container::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 115, 232, 0.05) 0%, rgba(26, 115, 232, 0) 70%);
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
+}
+
+.about-container::after {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 115, 232, 0.03) 0%, rgba(26, 115, 232, 0) 70%);
+  z-index: 0;
+  animation: float 10s ease-in-out infinite 2s;
+}
+
+/* ===== Left Side - Image Container ===== */
+.about-left {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  position: relative;
+  z-index: 2;
+  transform: translateX(-40px);
+  opacity: 0;
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-left.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Image Styling - Enhanced with Portrait Focus */
+.about-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.5);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 1;
+  filter: 
+    brightness(0.98) 
+    contrast(1.05) 
+    saturate(1.1);
+  border: 10px solid white;
+  transform-style: preserve-3d;
+  object-fit: cover;
+  aspect-ratio: 4/5;
+  object-position: center top; /* Focus on face for portraits */
+}
+
+/* Image Hover Effects */
+.about-image:hover {
+  transform: 
+    translateY(-8px) 
+    scale(1.03) 
+    rotate(1deg);
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.2),
+    0 0 0 6px rgba(255, 255, 255, 0.4);
+  filter: 
+    brightness(1.02) 
+    contrast(1.1) 
+    saturate(1.15);
+}
+
+/* Floating Border Effect */
+.about-image::after {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  right: -16px;
+  bottom: -16px;
+  border: 2px solid rgba(26, 115, 232, 0.2);
+  border-radius: 28px;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.about-image:hover::after {
+  opacity: 1;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+}
+
+/* Subtle Glow Effect - Portrait Focus */
+.about-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 30%, /* Focus glow on upper half for faces */
+    rgba(255,255,255,0.6) 0%, 
+    rgba(255,255,255,0) 70%
+  );
+  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  border-radius: 12px;
+}
+
+.about-image:hover::before {
+  opacity: 0.8;
+}
+
+/* ===== Right Side - Content ===== */
+.about-right {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  padding: 50px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.about-right.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Content Top Accent */
+.about-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #1a73e8, #34a853);
+  border-radius: 0 0 4px 4px;
+  opacity: 0;
+  transition: opacity 0.8s ease 0.8s;
+}
+
+.about-right.show::before {
+  opacity: 1;
+}
+
+/* Heading */
+.about-right h2 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: #111;
+  margin-bottom: 30px;
+  position: relative;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.about-right h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #1a73e8, #34a853);
+  border-radius: 4px;
+}
+
+/* Paragraphs */
+.about-right p {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.9;
+  color: #444;
+  margin-bottom: 25px;
+  transition: all 0.5s ease;
+}
+
+/* ===== Animations ===== */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .about-container {
+    padding: 80px 30px;
+    gap: 60px;
+  }
+  
+  .about-right {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 60px 20px;
+    gap: 50px;
+  }
+  
+  .about-image {
+    border-width: 8px;
+  }
+  
+  .about-right {
+    padding: 35px;
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 50px 15px;
+    gap: 40px;
+  }
+  
+  .about-left, 
+  .about-right {
+    min-width: 100%;
+  }
+  
+  .about-image {
+    border-width: 6px;
+    aspect-ratio: 1/1;
+  }
+  
+  .about-right {
+    padding: 30px 25px;
+  }
+  
+  .about-right h2::after {
+    bottom: -12px;
+  }
+}
+
+/* ===== React Component Specific Adjustments ===== */
+.about-left {
+  /* Ensure the image container animates with the same logic */
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}

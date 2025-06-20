@@ -1,0 +1,180 @@
+/* ===== Contact Container ===== */
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 60px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== Decorative Elements ===== */
+.contact-container::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 115, 232, 0.05) 0%, rgba(26, 115, 232, 0) 70%);
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* ===== Left Side - GIF ===== */
+.contact-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.3s;
+  z-index: 1;
+}
+
+.contact-gif {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== Right Side - Content ===== */
+.contact-right {
+  flex: 1;
+  padding-left: 60px;
+  color: #333;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
+  z-index: 1;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-right h2 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: 20px;
+  color: #111;
+  position: relative;
+  line-height: 1.3;
+}
+
+.contact-right h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #1a73e8, #34a853);
+  border-radius: 3px;
+}
+
+.contact-right p {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.8;
+  color: #444;
+  margin: 15px 0;
+}
+
+/* ===== Contact Details ===== */
+.contact-details a,
+.contact-details p {
+  display: flex;
+  align-items: center;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  text-decoration: none;
+  color: #444;
+  margin: 15px 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.contact-details a:hover {
+  color: #1a73e8;
+  background: rgba(26, 115, 232, 0.05);
+  transform: translateX(5px);
+}
+
+.icon {
+  margin-right: 12px;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.contact-details a:hover .icon {
+  transform: scale(1.2);
+}
+
+/* ===== Floating Animation ===== */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .contact-container {
+    padding: 60px 40px;
+  }
+  
+  .contact-right {
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 60px 30px;
+  }
+  
+  .contact-left {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  
+  .contact-right {
+    padding-left: 0;
+    width: 100%;
+  }
+  
+  .contact-gif {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 50px 20px;
+  }
+  
+  .contact-details a,
+  .contact-details p {
+    padding: 6px 10px;
+  }
+  
+  .icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+}
