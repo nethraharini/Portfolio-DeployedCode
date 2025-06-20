@@ -22,7 +22,10 @@ The deployed version is hosted in a separate repository: [Myportfolio](https://n
 Portfolio-DeployedCode/
 ├── public/
 │   ├── index.html
-│   ├── images, GIFs (like woman-walking.gif, aboutme.jpg, etc.)
+│   ├── woman-walking.gif
+│   ├── aboutme.jpg
+│   ├── contact.gif
+│   ├── nethraimage.jpeg
 │   └── resume.pdf
 ├── src/
 │   ├── components/
